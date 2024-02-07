@@ -23,6 +23,18 @@ export const getEventsFromUser = async (userId: string) => {
   }
 };
 
+export const getEventsCertFromUser = async (userId: string) => {
+  try {
+    const events = await db.userEvent.findMany({
+      where: { userId },
+      select: { events: true, reqCert: true },
+    });
+    return events;
+  } catch {
+    return null;
+  }
+};
+
 export const getUsersFromEvent = async (eventId: string) => {
   try {
     const users = await db.userEvent.findMany({

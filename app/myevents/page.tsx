@@ -10,12 +10,13 @@ import {
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { getAllPastEvents } from "@/data/events";
-import { getEventsFromUser } from "@/data/userEvent";
+import { getEventsCertFromUser } from "@/data/userEvent";
 import { auth } from "@/auth";
+import RequestCert from "@/components/reqCertButton";
 
 const MyEvents = async () => {
   const session = await auth();
-  const pastEvents = await getEventsFromUser(session?.user?.id);
+  const pastEvents = await getEventsCertFromUser(session?.user?.id);
   const pastEventsHTML = [];
   const upcomingEventsHTML = [];
 
@@ -47,6 +48,10 @@ const MyEvents = async () => {
               <Button size="sm" variant="outline" asChild>
                 <Link href={`/events/${event.id}`}>More Details</Link>
               </Button>
+              {/* Able to request cert when it is false */}
+              {!events.reqCert && (
+                <RequestCert userId={session?.user?.id} eventId={event.id} />
+              )}
             </TableCell>
           </TableRow>
         );
