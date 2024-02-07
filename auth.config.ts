@@ -33,7 +33,7 @@ export default {
       return true;
     },
 
-    async session({ token, session }) {
+    async session({ token, session }: any) {
       if (session.user) {
         session.user.id = token.sub;
         if (token.isAdmin) {

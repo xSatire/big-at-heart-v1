@@ -23,7 +23,7 @@ export const getEventsFromUser = async (userId: string) => {
   }
 };
 
-export const getEventsCertFromUser = async (userId: string) => {
+export const getEventsCertFromUser = async (userId: any) => {
   try {
     const events = await db.userEvent.findMany({
       where: { userId },

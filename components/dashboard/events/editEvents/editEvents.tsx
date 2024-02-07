@@ -166,7 +166,7 @@ const EditEvents = ({
                 name="description"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Description (optional)</FormLabel>
+                    <FormLabel>Description -optional</FormLabel>
                     <FormControl>
                       <Input placeholder="-" disabled={isPending} {...field} />
                     </FormControl>
@@ -179,7 +179,7 @@ const EditEvents = ({
                 name="organizerName"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Name of organizer (optional)</FormLabel>
+                    <FormLabel>Name of organizer -optional</FormLabel>
                     <FormControl>
                       <Input placeholder="-" disabled={isPending} {...field} />
                     </FormControl>
@@ -192,7 +192,7 @@ const EditEvents = ({
                 name="organizerContact"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Organizer's Contact (optional)</FormLabel>
+                    <FormLabel>Organizer's Contact -optional</FormLabel>
                     <FormControl>
                       <Input placeholder="-" disabled={isPending} {...field} />
                     </FormControl>

@@ -142,7 +142,7 @@ const CreateEvents = () => {
           name="description"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Description (optional)</FormLabel>
+              <FormLabel>Description -optional</FormLabel>
               <FormControl>
                 <Input
                   placeholder="An event..."
@@ -159,7 +159,7 @@ const CreateEvents = () => {
           name="organizerName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name of organizer (optional)</FormLabel>
+              <FormLabel>Name of organizer -optional</FormLabel>
               <FormControl>
                 <Input
                   placeholder="Suzan Lee"
@@ -176,7 +176,7 @@ const CreateEvents = () => {
           name="organizerContact"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Organizer's Contact (optional)</FormLabel>
+              <FormLabel>Organizer's Contact -optional</FormLabel>
               <FormControl>
                 <Input
                   placeholder="9876 5432"

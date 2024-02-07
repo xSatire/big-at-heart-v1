@@ -17,8 +17,8 @@ import RequestCert from "@/components/reqCertButton";
 const MyEvents = async () => {
   const session = await auth();
   const pastEvents = await getEventsCertFromUser(session?.user?.id);
-  const pastEventsHTML = [];
-  const upcomingEventsHTML = [];
+  const pastEventsHTML: any = [];
+  const upcomingEventsHTML: any = [];
 
   if (pastEvents) {
     pastEvents.map((events) => {
