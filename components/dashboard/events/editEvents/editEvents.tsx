@@ -192,7 +192,7 @@ const EditEvents = ({
                 name="organizerContact"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Organizer's Contact -optional</FormLabel>
+                    <FormLabel>Organizer&apos;s Contact -optional</FormLabel>
                     <FormControl>
                       <Input placeholder="-" disabled={isPending} {...field} />
                     </FormControl>

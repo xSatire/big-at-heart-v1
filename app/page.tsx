@@ -5,7 +5,7 @@ const page = () => {
   return (
     <section className="w-full flex flex-col justify-center items-center">
       <h1 className="head_text text-center">
-        Support &and; Volunteer
+        Support &amp; Volunteer
         <br className="max-md:hidden" />
         <span className="orange_gradient text-center"> Big At Heart</span>
       </h1>
