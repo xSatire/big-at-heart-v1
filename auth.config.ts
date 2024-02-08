@@ -4,6 +4,23 @@ import { loginSchema } from "./schema";
 
 import type { NextAuthConfig } from "next-auth";
 import { getUserByEmail, getUserById } from "./data/user";
+import "next-auth";
+
+declare module "next-auth" {
+  interface User {
+    role?: any;
+  }
+
+  interface Session {
+    user?: User;
+  }
+}
+
+declare module "@auth/core/jwt" {
+  interface JWT {
+    role: string;
+  }
+}
 
 export default {
   providers: [
@@ -27,7 +44,7 @@ export default {
     }),
   ],
   callbacks: {
-    async signIn({ user, account }) {
+    async signIn({ account }) {
       if (account?.provider !== "credentials") return true; //stop checking if using provider
 
       return true;
@@ -36,6 +53,7 @@ export default {
     async session({ token, session }: any) {
       if (session.user) {
         session.user.id = token.sub;
+        session.user.role = "";
         if (token.isAdmin) {
           session.user.role = "admin";
         } else {

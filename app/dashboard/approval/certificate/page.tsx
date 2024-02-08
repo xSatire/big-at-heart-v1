@@ -23,7 +23,7 @@ const Certificate = async () => {
           <TableCell className="font-medium">{user.name}</TableCell>
           <TableCell>{user.email}</TableCell>
           <TableCell>{events.name}</TableCell>
-          <TableCell>{attendance.toString()}</TableCell>
+          <TableCell>{attendance && attendance.toString()}</TableCell>
           <TableCell className="text-right flex justify-end gap-x-3">
             <ApprovedCertButton userId={user.id} eventId={events.id} />
           </TableCell>

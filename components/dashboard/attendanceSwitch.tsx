@@ -11,7 +11,7 @@ const AttendanceSwitch = ({
   userId,
   eventId,
 }: {
-  attendance: boolean;
+  attendance: any;
   userId: string;
   eventId: string;
 }) => {
@@ -21,7 +21,7 @@ const AttendanceSwitch = ({
   const handleAttendance = () => {
     startTransition(() => {
       updateAttendance(userId, eventId, !currentAttendance);
-      setCurrentAttendance((prev) => {
+      setCurrentAttendance((prev: boolean) => {
         return !prev;
       });
     });

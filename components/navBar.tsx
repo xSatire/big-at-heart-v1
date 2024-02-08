@@ -9,6 +9,7 @@ const NavBar = () => {
   const session = useSession();
   let isLoggedIn = !!session.data;
   let isAdmin = false;
+
   if (isLoggedIn && session?.data?.user?.role == "admin") {
     isAdmin = true;
   }
