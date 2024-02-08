@@ -176,7 +176,7 @@ const CreateEvents = () => {
           name="organizerContact"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Organizer's Contact -optional</FormLabel>
+              <FormLabel>Organizer&apos;s Contact -optional</FormLabel>
               <FormControl>
                 <Input
                   placeholder="9876 5432"
