@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { MdLocationOn, MdCalendarMonth } from "react-icons/md";
 
 import {
   Card,
@@ -13,26 +14,25 @@ import { Button } from "./ui/button";
 
 const EventCard = ({ event }: any) => {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>{event.name}</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <div className="relative w-full aspect-square">
-          <Image src="/volunteering3.jpg" alt="picture" fill />
-        </div>
-        <div>
-          <div>Date: {event.date}</div>
-          <div>Start Time: {event.startTime}</div>
-          <div>End Time: {event.EndTime}</div>
-        </div>
-      </CardContent>
-      <CardFooter className="flex justify-end">
-        <Button asChild className="bg-blue-400 right">
-          <Link href={`/events/${event.id}`}>More Details</Link>
-        </Button>
-      </CardFooter>
-    </Card>
+    <Link href={`/events/${event.id}`}>
+      <Card className="min-w-[400px]">
+        <CardHeader className="relative w-full aspect-[16/9]">
+          <Image src="/future1.jpg" alt="picture" fill />
+        </CardHeader>
+        <CardContent>
+          <div className="text-lg font-semibold">{event.name}</div>
+          <div className="border-solid w-full border-black border"></div>
+          <div className="flex gap-x-2 items-center my-2">
+            <MdLocationOn />
+            <p className="font-semibold">{event.location}</p>
+          </div>
+          <div className="flex gap-x-2 items-center my-2">
+            <MdCalendarMonth />
+            <p>{event.date}</p>
+          </div>
+        </CardContent>
+      </Card>
+    </Link>
   );
 };
 

@@ -20,6 +20,11 @@ const layout = ({
             Check Attendance
           </Link>
         </Button>
+        <Button asChild variant={"outline"}>
+          <Link href={`/dashboard/upcomingEvents/${id}/reports`}>
+            Detailed Reports
+          </Link>
+        </Button>
       </div>
       <div>{children}</div>
     </div>

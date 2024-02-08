@@ -37,9 +37,9 @@ export default {
       if (session.user) {
         session.user.id = token.sub;
         if (token.isAdmin) {
-          session.user.role = "user";
-        } else {
           session.user.role = "admin";
+        } else {
+          session.user.role = "user";
         }
       }
       return session;

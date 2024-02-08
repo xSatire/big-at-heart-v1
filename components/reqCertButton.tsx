@@ -16,7 +16,7 @@ const RequestCert = ({ userId, eventId }: any) => {
         router.refresh();
       }}
     >
-      Approve{" "}
+      Request{" "}
     </Button>
   );
 };

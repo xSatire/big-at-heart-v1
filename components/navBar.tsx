@@ -8,7 +8,11 @@ import { logout } from "@/actions/access";
 const NavBar = () => {
   const session = useSession();
   let isLoggedIn = !!session.data;
-  let isAdmin = true;
+  let isAdmin = false;
+  if (isLoggedIn && session?.data?.user?.role == "admin") {
+    isAdmin = true;
+  }
+  console.log(session.data);
 
   return (
     <nav className="flex justify-between items-center w-full pt-3 mb-12">

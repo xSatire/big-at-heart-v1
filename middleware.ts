@@ -17,6 +17,7 @@ export default auth((req) => {
   if (isLoggedIn) {
     role = req.auth?.user?.role;
   }
+  console.log(role);
 
   const isApiAuthRoute = nextUrl.pathname.startsWith(apiAuthPrefix);
   const isPublicRoute = publicRoutes.includes(nextUrl.pathname);
@@ -36,10 +37,6 @@ export default auth((req) => {
 
   if (!isLoggedIn && !isPublicRoute) {
     return Response.redirect(new URL("/login", nextUrl));
-  }
-
-  if (role !== "admin" && isAdminRoutes) {
-    return Response.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl));
   }
 
   return null;

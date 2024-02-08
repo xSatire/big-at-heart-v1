@@ -68,9 +68,9 @@ export const Sidebar = () => {
               className="rounded-sm"
             />
             <div className="flex flex-col gap-1">
-              <span className="font-bold">Username</span>
+              <span className="font-bold">Admin</span>
               <span className="text-sm text-center text-red-700 font-bold">
-                Role
+                Admin
               </span>
             </div>
           </div>

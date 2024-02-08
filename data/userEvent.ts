@@ -1,3 +1,4 @@
+import Attendance from "@/app/dashboard/pastEvents/[id]/attendance/page";
 import { db } from "@/lib/db";
 
 export const getUserEvent = async (userId: string, eventId: string) => {
@@ -71,6 +72,40 @@ export const reqCert = async (
     });
     return null;
   } catch (e) {
+    return null;
+  }
+};
+
+export const getHoursUsers = async (userId: any) => {
+  try {
+    const userEvent = await db.userEvent.findMany({
+      where: {
+        userId: userId,
+        events: {
+          completed: true,
+        },
+      },
+      select: { events: true },
+    });
+    return userEvent;
+  } catch {
+    return null;
+  }
+};
+
+export const getUserEventsFromEvent = async (eventId: any) => {
+  try {
+    const userEvents = await db.userEvent.findMany({
+      where: {
+        eventId: eventId,
+      },
+      select: {
+        user: true,
+        attendance: true,
+      },
+    });
+    return userEvents;
+  } catch {
     return null;
   }
 };
