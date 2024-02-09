@@ -41,7 +41,6 @@ const Reports = async ({ params }: any) => {
       fill: "#82ca9d",
     },
   ];
-  console.log(userEvents);
 
   //   Creating Bar Chart
   userEvents?.map((event) => {

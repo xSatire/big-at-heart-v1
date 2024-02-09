@@ -4,9 +4,11 @@ import { Button } from "./ui/button";
 import { handleSignUp } from "@/actions/user";
 import { FormError } from "./auth/form-error";
 import { FormSuccess } from "./auth/form-success";
+import { useRouter } from "next/navigation";
 
 const SignUpButton = ({ userId, eventId }: any) => {
   const [isPending, startTransition] = useTransition();
+  const router = useRouter();
 
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -19,6 +21,7 @@ const SignUpButton = ({ userId, eventId }: any) => {
         setSuccess(res?.success);
       });
     });
+    router.refresh();
   };
   return (
     <div className="flex flex-col gap-y-3">

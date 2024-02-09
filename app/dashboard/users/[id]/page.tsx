@@ -45,7 +45,6 @@ const page = async ({ params }: any) => {
       });
     });
   }
-  console.log(hourArray);
 
   return (
     <div className="grid grid-cols-3">
