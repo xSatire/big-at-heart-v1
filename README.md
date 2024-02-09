@@ -1,8 +1,8 @@
-### PROJECT ALLIN1
+# PROJECT ALLIN1
 
 ## Project Motto
 
-- To create a one stop shop for all things volunteering related.
+### To create a one stop shop for all things volunteering related.
 
 ## Rationale behind the project
 
@@ -15,7 +15,7 @@
 1. Visit https://big-at-heart-v1.vercel.app/
 
 Note: As the server is a free tier, sometimes it might lag, please be patient. Alternatively, you can run it locally.
-` X
+
 Admin Account details:
 
 - email: admin@gmail.com
@@ -48,3 +48,7 @@ npm run dev
 
 3. Admins
    Admins will have access to the dashboard tab. Through the use of a dashboard, they are able to manage forms submitted by volunteers, create and track both past and upcoming events as well as get analysis on the events.
+
+## Reporting Issues
+
+Please contact newyplayz@gmail.com.
